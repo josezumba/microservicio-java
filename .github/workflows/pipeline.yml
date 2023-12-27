@@ -19,6 +19,8 @@ jobs:
         run: |
           chmod +x gradlew
           ./gradlew build
+          build_output=$(ls -t build/libs/*.jar | head -n 1)
+          echo "Built artifact: $build_output"
           ls -ltr
           
       - name: SonarCloud Analysis
