@@ -17,8 +17,10 @@ jobs:
 
       - name: Build
         run: |
-          echo "Building"
-          
+          chmod +x gradlew
+          ./gradlew build
+          ls -ltr
+                    
       - name: SonarCloud Analysis
         run: |
           chmod +x gradlew
