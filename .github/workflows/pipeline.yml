@@ -35,6 +35,12 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
+      - name: Copia de Jar a Raiz de proyecto
+        run: |
+          cp $GITHUB_WORKSPACE/build/libs/testing-web-0.0.1-SNAPSHOT-plain.jar .
+          chmod 777 testing-web-0.0.1-SNAPSHOT-plain.jar
+          ls -lt 
+
       - name: Docker Build
         run: |
           docker build --tag josezumba/microservicio-java:latest .
