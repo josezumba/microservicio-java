@@ -18,4 +18,4 @@ spec:
       - name: microservicio-java
         image: josezumba/microservicio-java:latest
         ports:
-        - containerPort: 8085
+        - containerPort: 8080
