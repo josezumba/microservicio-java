@@ -42,7 +42,7 @@ jobs:
       - name: Check Code Coverage Threshold
         run: |
           COVERAGE=$(awk -F" " '/Overall coverage/ {print $3}' build/reports/jacoco/test/jacocoTestReport.xml)
-          echo "Coverage: $COVERAGE "
+          echo $COVERAGE
           if (( $(echo "$COVERAGE > 85" | bc -l) )); then
             echo "Code coverage is above 85%."
           else
