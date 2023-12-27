@@ -24,7 +24,9 @@ jobs:
           ls -ltr
 
       - name: Generate Code Coverage Report
-        run: ./gradlew jacocoTestReport
+        run: |
+          ./gradlew jacocoTestReport
+          ls $GITHUB_WORKSPACE/build/
 
       - name: Check Code Coverage Threshold
         run: |
