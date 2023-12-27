@@ -6,4 +6,4 @@ ADD build/libs/testing-web-0.0.1-SNAPSHOT-plain.jar  /app/testing-web-0.0.1-SNAP
 
 WORKDIR /app
 
-CMD java -jar spring-microservicio-java-2.6.3.jar
+CMD java -jar testing-web-0.0.1-SNAPSHOT-plain.jar
