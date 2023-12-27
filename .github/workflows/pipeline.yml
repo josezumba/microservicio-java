@@ -1,0 +1,25 @@
+name: ContinuosIntegration
+
+on:
+  
+  push:
+  workflow_dispatch:
+
+jobs:
+  
+  build:
+    
+    runs-on: ubuntu-latest
+
+    steps:
+    
+      - uses: actions/checkout@v3
+
+      - name: Build
+        run: |
+          echo "Building"
+          
+      - name: SonarCloud Analysis
+        run: |
+          chmod +x gradlew
+          ./gradlew build sonar -Dsonar.token=${{ secrets.TOKEN_SONARCLOUD }}
