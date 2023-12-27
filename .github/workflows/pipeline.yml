@@ -32,6 +32,8 @@ jobs:
           ls $GITHUB_WORKSPACE/build/reports
           echo "ls $GITHUB_WORKSPACE/build/reports/jacoco"
           ls $GITHUB_WORKSPACE/build/reports/jacoco
+          echo "ls $GITHUB_WORKSPACE/build/reports/jacoco/test/"
+          ls $GITHUB_WORKSPACE/build/reports/jacoco/test/
           echo "ls $GITHUB_WORKSPACE/build/jacoco"
           ls $GITHUB_WORKSPACE/build/jacoco
 
