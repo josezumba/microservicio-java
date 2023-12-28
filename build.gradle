@@ -25,11 +25,8 @@ sonar {
     property "sonar.organization", "josezumba"
     property "sonar.host.url", "https://sonarcloud.io/"
     property "sonar.projectName", "microservicio-java"
+    property 'sonar.java.coveragePlugin', 'jacoco'
   }
-}
-
-test {
-	useJUnitPlatform()
 }
 
 jacoco {
@@ -52,4 +49,11 @@ jacocoTestCoverageVerification {
           }
 	}
     }
+}
+
+test {
+	jacoco {
+        	enabled = true
+    	}
+	useJUnitPlatform()
 }
