@@ -6,18 +6,6 @@ plugins {
 	id 'jacoco'
 }
 
-jacoco {
-    toolVersion = '0.8.7'
-}
-
-jacocoTestReport {
-    reports {
-        xml.enabled true
-        html.enabled true
-    }
-}
-
-
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
@@ -42,4 +30,16 @@ sonar {
 
 test {
 	useJUnitPlatform()
+}
+
+jacoco {
+    toolVersion = '0.8.7'
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.enabled true
+        html.enabled true
+    }
 }
