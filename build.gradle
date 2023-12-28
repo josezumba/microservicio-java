@@ -45,7 +45,7 @@ jacocoTestReport {
 }
 
 jacocoTestCoverageVerification {
-    validationRules {
+    violationRules {
 	rule {
  	  limit {
 	      minimum = 0.70
