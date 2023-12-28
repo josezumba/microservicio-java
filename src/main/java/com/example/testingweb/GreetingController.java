@@ -18,11 +18,4 @@ public class GreetingController {
 	public @ResponseBody String greeting() {
 		return service.greet();
 	}
-
-	@RequestMapping("/greeting1")
-	public @ResponseBody String greeting1(@RequestParam(value = "name", defaultValue = "World") String name) {
-		String query = "SELECT * FROM users WHERE username = '" + name + "'";
-		return service.greet(query);
-	}
-
 }
