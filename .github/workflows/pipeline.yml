@@ -69,3 +69,25 @@ jobs:
       - name: Deploy a Minikube
         run: |
           kubectl apply -f deployment.yml
+
+  Jmeter:
+    runs-on: self-hosted
+    needs: deploy
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Download jMeter
+        run: |
+          Invoke-WebRequest -Uri https://downloads.apache.org/jmeter/binaries/apache-jmeter-5.6.2.tgz -OutFile apache-jmeter-5.6.2.tgz
+          tar -xvzf apache-jmeter-5.6.2.tgz
+          ls
+          
+      - name: Ejecutar prueba con jmeter
+        run: |
+          Get-Location
+          .\apache-jmeter-5.6.2\bin\jmeter.bat -n -t rendimiento\prueba_microservicio.jmx -l rendimiento\prueba_respuesta.jtl
+
+      - name: Check ejecución
+        run: |
+          Get-ChildItem Env:
+          .\apache-jmeter-5.6.2\bin\jmeter.bat -n -t rendimiento\prueba_microservicio.jmx -l rendimiento\prueba_respuesta.jtl
