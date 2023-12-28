@@ -43,3 +43,13 @@ jacocoTestReport {
         html.enabled true
     }
 }
+
+jacocoTestCoverageVerification {
+    validationRules {
+	rule {
+ 	  limit {
+	      minimum = 0.70
+          }
+	}
+    }
+}
