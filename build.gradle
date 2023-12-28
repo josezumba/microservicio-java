@@ -46,15 +46,13 @@ jacocoTestCoverageVerification {
     violationRules {
 	rule {
  	  limit {
-	      minimum = 0.70
+	      minimum = 0.85
           }
 	}
     }
 }
 
 test {
-	jacoco {
-        	enabled = true
-    	}
+
 	useJUnitPlatform()
 }
