@@ -8,7 +8,6 @@ public class GreetingService {
 		return "Hello, World";
 	}
 	public String greet1(String query) {
-		
 		return "Iyección código" + query;
 	}
 }
